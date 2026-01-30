@@ -1,0 +1,56 @@
+.album_list {
+    display: flex;
+    justify-content: center;
+    .album_item {
+        position: relative;
+        padding: 2rem;
+        text-align: center;
+
+        .album_guide {
+            width: 80%;
+            height: 0px;
+            background-color: rgba(222, 184, 135, 0.363);
+            position: absolute;
+            z-index: 100;
+            left: 10%;
+            transition: height 2s;
+            overflow: hidden;
+            label {
+                font-size: 2rem;
+                color: rgb(38, 0, 255);
+            }
+        }
+
+        .album_img {
+            height: 20rem;
+            width: 20rem;
+            img {
+                cursor: pointer;
+                border-radius: 0.3rem;
+                opacity: 0.5;
+                transition-duration: 1s;
+                &:hover {
+                    opacity: 1;
+                    transform: scale(1.05);
+                    box-shadow: 0.3rem 0.3rem 0.5rem #333;
+                    border: 0.05rem solid #fff;
+                }
+            }
+        }
+
+        .album_title {
+            margin-top: 2rem;
+
+            label.txt_title {
+                font-size: 1.5rem;
+                color: rgb(63, 83, 122);
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            &:hover .album_guide {
+                height: 3rem;
+            }
+        }
+    }
+}

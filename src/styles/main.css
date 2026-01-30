@@ -1,0 +1,146 @@
+@charset "UTF-8";
+.menu {
+  list-style-type: none;
+  display: flex;
+  border-bottom: 1rem solid #ccc;
+}
+.menu li a {
+  margin: 2rem;
+  color: rgba(204, 204, 204, 0.897);
+  text-decoration-line: none;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.menu li .active {
+  font-size: 2rem;
+  color: #f70303;
+}
+
+.member_button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.member_space .member_list .member_head {
+  background-color: rgb(2, 79, 124) !important;
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.member_space .member_list .member_item {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 20px; /* 20px gap between rows and columns */
+  padding: 0.5rem 0;
+}
+.member_space .member_list .member_item:not(:first-child) > div:first-child {
+  text-align: left;
+  padding-left: 10px;
+}
+.member_space .member_list .member_item:nth-child(even) {
+  background-color: #f3f2f2;
+}
+.member_space .member_list .member_item:hover {
+  background-color: #e3f1fd;
+}
+
+.product-space .product-btn {
+  padding: 1rem;
+  text-align: right;
+}
+.product-space .product-content .product-data .product-item {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 4fr 1fr 1fr 1fr;
+  gap: 20px; /* 20px gap between rows and columns */
+  align-items: center;
+}
+.product-space .product-content .product-data .product-item div {
+  padding: 0rem;
+  text-align: center;
+}
+.product-space .product-content .product-data .product-item:nth-child(even) {
+  background-color: azure;
+}
+.product-space .product-content .product-data .product-item .item-name {
+  text-align: left;
+  padding-left: 5px;
+}
+.product-space .product-content .product-data .product-item .item-description {
+  text-align: left;
+}
+.product-space .product-content .product-data .product-item .item-price {
+  text-align: right;
+}
+.product-space .product-content .product-data .product-item .item-img img {
+  width: 50px;
+}
+.product-space .product-content .product-data .product-item .item-control {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.product-space .product-content .product-data .product-header {
+  height: 50px;
+  background-color: #666;
+  color: #fff;
+}
+.product-space .product-content .product-data .product-header > div {
+  text-align: center !important;
+  font-size: 1.2rem;
+  border-left: 1px solid #999;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+.product-space .product-content .product-data .product-header > div:first-child {
+  border-left: 0px solid transparent;
+}
+
+.staff-data .staff-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 2fr 0.5fr;
+  -moz-column-gap: 0px;
+       column-gap: 0px; /* CHỈ giữ khoảng cách giữa các cột */
+}
+.staff-data .staff-item div {
+  text-align: left;
+  padding: 0.1rem;
+}
+.staff-data .staff-item div:first-child {
+  text-align: center;
+  border-left: 0px solid transparent;
+}
+.staff-data .staff-item:nth-child(even) {
+  background-color: azure;
+}
+.staff-data .staff-item .item-title {
+  font-weight: bold;
+}
+.staff-data .staff-item .item-img {
+  text-align: center;
+}
+.staff-data .staff-item .item-img img {
+  width: 50px;
+}
+.staff-data .header-row {
+  background-color: #666;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  height: 50px;
+}
+.staff-data .header-row > div {
+  font-family: "Times New Roman", Times, serif;
+  text-transform: uppercase;
+  padding-top: 8px;
+  text-align: center !important;
+  border-left: 1px solid #a5a5a5;
+}

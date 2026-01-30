@@ -1,0 +1,47 @@
+.staff-data {
+    .staff-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 2fr 0.5fr;
+        column-gap: 0px; /* CHỈ giữ khoảng cách giữa các cột */
+
+        // align-items: stretch;
+        div {
+            text-align: left;
+            padding: 0.1rem;
+
+            &:first-child {
+                text-align: center;
+                border-left: 0px solid transparent;
+            }
+        }
+        &:nth-child(even) {
+            background-color: azure;
+        }
+
+        .item-title {
+            font-weight: bold;
+        }
+
+        .item-img {
+            text-align: center;
+            img {
+                width: 50px;
+            }
+        }
+    }
+    .header-row {
+        background-color: #666;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+        height: 50px;
+
+        & > div {
+            font-family: 'Times New Roman', Times, serif;
+            text-transform: uppercase;
+            padding-top: 8px;
+            text-align: center !important;
+            border-left: 1px solid #a5a5a5;
+        }
+    }
+}

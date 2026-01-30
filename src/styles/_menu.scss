@@ -1,0 +1,19 @@
+.menu {
+    list-style-type: none;
+    display: flex;
+    border-bottom: 1rem solid #ccc;
+    li {
+        a {
+            margin: 2rem;
+            color: rgba(204, 204, 204, 0.897);
+
+            text-decoration-line: none;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .active {
+            font-size: 2rem;
+            color: #f70303;
+        }
+    }
+}
