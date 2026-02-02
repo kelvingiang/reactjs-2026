@@ -13,8 +13,8 @@ function StaffsFeature(props) {
   const fetchStaffs = async () => {
     const params = { _limit: 10 };
     
-    const memberList = await staffApi.getAll(params);
-    setDataList(memberList.data.data || []); // ← 取出陣列才行！
+    const list = await staffApi.getAll(params);
+    setDataList(list.data.data || []); // ← 取出陣列才行！
     
     // console.log("API 回傳：", productList);
   };

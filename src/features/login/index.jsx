@@ -28,10 +28,10 @@ function LoginFeature(props) {
       const res = await loginApi.login(formData);
       // ⭐ 正確位置在 res.data.token
       localStorage.setItem('jwt_token', res.data.token);
-      alert('登入成功！');
-      console.log('後端回傳：', res.data);
+       alert('登入成功！');
+      //console.log('後端回傳：', res.data);
 
-       navigate('/products'); // ← 新增後返回列表
+      navigate('/products'); // ← 新增後返回列表
     } catch (err) {
       console.error(err);
       alert('❌ 登入失敗，請檢查 API');

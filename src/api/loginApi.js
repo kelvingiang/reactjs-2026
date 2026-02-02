@@ -6,7 +6,5 @@ const loginApi = {
     const url = '/login';
     return axisoClient.post(url, data);
   },
-
-
 };
 export default loginApi;
