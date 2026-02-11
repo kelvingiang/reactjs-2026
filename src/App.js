@@ -14,8 +14,10 @@ import LogoutFeature from './features/login/logout';
 import ProductEdit from './features/products/component/product-edit';
 import ProductAdd from './features/products/component/product-add';
 import ProductView from './features/products/component/product-view';
+import Show from './features/show';
 // tao file kiem tra đăng nhập thành công mới được vô trang này
 import ProtectedRoute from './components/ProtectedRoute';
+import ProductsShow from './features/show';
 
 
 
@@ -36,6 +38,7 @@ function App() {
         <Route path="/login" element={<LoginFeature />} />
         <Route path="/logout" element={<LogoutFeature />} />
         <Route path="/product-view" element={<ProductView />} />
+        <Route path="/show" element={<ProductsShow />} />
         
         {/* <Route path="/product-edit" element={<ProductEdit />} /> 
         <Route path="/product-add" element={<ProductAdd />} />  */}

@@ -1,4 +1,24 @@
 @charset "UTF-8";
+.loading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(2, 94, 180);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+
+.error-message {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(136, 1, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+
 .menu {
   list-style-type: none;
   display: flex;
@@ -104,6 +124,43 @@
   border-left: 0px solid transparent;
 }
 
+.product-content .product-show {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px; /* 20px gap between rows and columns */
+  /* 2. 當進入視窗後，加上這個 Class 觸發動畫 */
+}
+.product-content .product-show .product-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform; /* 優化效能 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.product-content .product-show .product-item .item-name {
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgb(2, 110, 160);
+}
+.product-content .product-show .product-item img {
+  border: #ccc solid 1px;
+  border-radius: 5px;
+  margin-top: 20px;
+  width: 50%;
+}
+.product-content .product-show .product-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.product-content .no-more {
+  height: 50px;
+  background-color: #666;
+  color: #fff;
+  font-weight: bold;
+  padding-top: 12px;
+}
+
+/* 定義動畫軌跡 */
 .staff-data .staff-item {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 2fr 0.5fr;

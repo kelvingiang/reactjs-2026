@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const axiosClient = axios.create({
   baseURL: 'http://localhost/api-app/wp-json/api/v1/',
-  // ❌ 不要在這裡固定 Content-Type
+  headers: { 'Content-Type': 'application/json' },
 });
 
 axiosClient.interceptors.request.use((config) => {
@@ -17,11 +17,28 @@ axiosClient.interceptors.request.use((config) => {
 // response 不要亂改結構（保留 axios 原樣）
 axiosClient.interceptors.response.use(
   (response) => response,
+  // (response) => response.data,
   (error) => {
-    if (error.response?.status === 401) {
-      localStorage.removeItem('jwt_token');
-      window.location.href = '/login';
+    // 檢查是否是網路斷線 (ERR_CONNECTION_REFUSED)
+    const isNetworkError = !error.response && error.request;
+    // 請求失敗（例如 404, 500, 或網路斷線）時會進到這裡
+    let message = '連線失敗，請稍後再試';
+
+    // if (error.response?.status === 401) {
+    if (error.response) {
+      if (error.response.status === 401) {
+        localStorage.removeItem('jwt_token');
+        window.location.href = '/login';
+      }
+      message = `伺服器錯誤 (${error.response.status})`;
+      return Promise.reject(error);
+    } else if (error.request) {
+      // 請求已發出但沒收到回應 (如網路斷線)
+      message = '網路連線異常，請檢查您的網路!!!';
     }
+    // 在這裡觸發提示 (以瀏覽器原生 alert 為例)
+    alert(message);
+
     return Promise.reject(error);
   }
 );

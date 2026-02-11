@@ -1,0 +1,17 @@
+@mixin div_style($color) {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+}
+
+.loading {
+    @include div_style(rgb(2, 94, 180));
+}
+
+.error-message {
+    @include div_style(rgb(136, 1, 1));
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import '../../styles/main.css';
+import '../../styles/main.min.css';
 
 MenuComponent.propTypes = {};
 
@@ -27,6 +27,9 @@ function MenuComponent(props) {
         </li>
         <li>
           <NavLink to="/products">Products</NavLink>
+        </li>
+        <li>
+          <NavLink to="/show">show Product</NavLink>
         </li>
         <li>
           <NavLink to="/login">Login</NavLink>
