@@ -28,6 +28,7 @@ axiosClient.interceptors.response.use(
     if (error.response) {
       if (error.response.status === 401) {
         localStorage.removeItem('jwt_token');
+      //  window.location.href = '/react-web/login';
         window.location.href = '/login';
       }
       message = `伺服器錯誤 (${error.response.status})`;

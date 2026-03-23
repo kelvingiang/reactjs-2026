@@ -1,0 +1,17 @@
+khi build project để luôn nào cũng trỏ về trang chủ 
+1/ trong package.json phần sau cùng chén vào    "homepage": "."
+2/ trong file index chủ thêm tên thư mục    
+    {/* <BrowserRouter basename="/react-web"> */}
+    nếu đang develop thì bỏ basename="/react-web đi 
+3 do project này có thêm login nên trong file axosClient.js tại dòng 31 
+    //  window.location.href = '/react-web/login';
+        window.location.href = '/login'; thay đổi chút
+4/ bên thư mục chạy trên xampp như thế thêm file .htaccess để điều hướng
+   <IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /react-web/
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /react-web/index.html [L]
+</IfModule>

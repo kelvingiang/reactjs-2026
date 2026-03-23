@@ -19,7 +19,9 @@ function LoginFeature(props) {
     }));
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    
     try {
       const formData = new FormData();
 

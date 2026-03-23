@@ -14,6 +14,8 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
+      {/* thêm basename="/react-web" để trỏ về trang chính  */}
+      {/* <BrowserRouter basename="/react-web"> */}
       <BrowserRouter>
         <App />
       </BrowserRouter>
